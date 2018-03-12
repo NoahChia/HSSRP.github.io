@@ -1,0 +1,168 @@
+2018-03-04 15:43:45,784 [INFO] - a.e.s.Slf4jLogger - Slf4jLogger started
+2018-03-04 15:43:45,831 [INFO] - application - Creating Pool for datasource 'default'
+2018-03-04 15:43:45,844 [INFO] - c.z.h.HikariDataSource - HikariPool-1 - Started.
+2018-03-04 15:43:46,022 [INFO] - p.a.d.HikariCPConnectionPool - datasource [default] bound to JNDI as DefaultDS
+2018-03-04 15:43:46,050 [INFO] - p.a.d.DefaultDBApi - Database [default] connected at jdbc:h2:./database/jatos
+2018-03-04 15:43:46,417 [INFO] - n.s.e.p.s.f.AnnotationSizeOfFilter - Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2018-03-04 15:43:46,422 [INFO] - n.s.e.p.s.AgentLoader - Unavailable or unrecognised attach API : java.lang.ClassNotFoundException: com.sun.tools.attach.VirtualMachine
+2018-03-04 15:43:46,435 [INFO] - n.s.e.p.s.JvmInformation - Detected JVM data model settings of: 32-Bit HotSpot JVM
+2018-03-04 15:43:46,435 [INFO] - n.s.e.p.i.DefaultSizeOfEngine - using Unsafe sizeof engine
+2018-03-04 15:43:48,992 [INFO] - o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: h2PersistenceUnit
+	...]
+2018-03-04 15:43:49,084 [INFO] - o.h.Version - HHH000412: Hibernate Core {5.1.0.Final}
+2018-03-04 15:43:49,086 [INFO] - o.h.c.Environment - HHH000206: hibernate.properties not found
+2018-03-04 15:43:49,087 [INFO] - o.h.c.Environment - HHH000021: Bytecode provider name : javassist
+2018-03-04 15:43:49,144 [INFO] - o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-04 15:43:49,294 [INFO] - o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-03-04 15:43:49,748 [INFO] - o.h.v.i.u.Version - HV000001: Hibernate Validator 5.2.4.Final
+2018-03-04 15:43:50,746 [INFO] - g.c.Common - Path to study assets directory is C:\Users\Noah\Documents\Noah Chia\HSSRP\jatos-3.1.12\study_assets_root
+2018-03-04 15:43:50,864 [INFO] - g.Initializer - .checkStudyAssetsRootDir: Created study assets root directory C:\Users\Noah\Documents\Noah Chia\HSSRP\jatos-3.1.12\study_assets_root
+2018-03-04 15:43:50,864 [INFO] - g.Initializer - JATOS initialized
+2018-03-04 15:43:50,865 [INFO] - g.OnStartStop - JATOS has started
+2018-03-04 15:43:50,880 [INFO] - p.a.Play - Application started (Prod)
+2018-03-04 15:43:51,164 [INFO] - p.c.s.NettyServer - Listening for HTTP on /127.0.0.1:9000
+2018-03-04 15:44:01,570 [WARN] - c.g.a.AuthenticationAction - Authentication failed: remote address 127.0.0.1 tried to access page /
+2018-03-04 15:44:01,703 [INFO] - gui_access - GET /jatos/login (null)
+2018-03-04 16:59:37,009 [INFO] - a.e.s.Slf4jLogger - Slf4jLogger started
+2018-03-04 16:59:37,039 [INFO] - application - Creating Pool for datasource 'default'
+2018-03-04 16:59:37,051 [INFO] - c.z.h.HikariDataSource - HikariPool-1 - Started.
+2018-03-04 16:59:37,296 [INFO] - p.a.d.HikariCPConnectionPool - datasource [default] bound to JNDI as DefaultDS
+2018-03-04 16:59:37,323 [INFO] - p.a.d.DefaultDBApi - Database [default] connected at jdbc:h2:./database/jatos
+2018-03-04 16:59:37,534 [INFO] - n.s.e.p.s.f.AnnotationSizeOfFilter - Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2018-03-04 16:59:37,537 [INFO] - n.s.e.p.s.AgentLoader - Unavailable or unrecognised attach API : java.lang.ClassNotFoundException: com.sun.tools.attach.VirtualMachine
+2018-03-04 16:59:37,542 [INFO] - n.s.e.p.s.JvmInformation - Detected JVM data model settings of: 32-Bit HotSpot JVM
+2018-03-04 16:59:37,542 [INFO] - n.s.e.p.i.DefaultSizeOfEngine - using Unsafe sizeof engine
+2018-03-04 16:59:38,604 [INFO] - o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: h2PersistenceUnit
+	...]
+2018-03-04 16:59:38,692 [INFO] - o.h.Version - HHH000412: Hibernate Core {5.1.0.Final}
+2018-03-04 16:59:38,693 [INFO] - o.h.c.Environment - HHH000206: hibernate.properties not found
+2018-03-04 16:59:38,695 [INFO] - o.h.c.Environment - HHH000021: Bytecode provider name : javassist
+2018-03-04 16:59:38,745 [INFO] - o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-04 16:59:38,890 [INFO] - o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-03-04 16:59:39,298 [INFO] - o.h.v.i.u.Version - HV000001: Hibernate Validator 5.2.4.Final
+2018-03-04 16:59:40,297 [INFO] - g.c.Common - Path to study assets directory is C:\Users\Noah\Documents\Noah Chia\HSSRP\jatos-3.1.12\study_assets_root
+2018-03-04 16:59:40,404 [INFO] - g.Initializer - JATOS initialized
+2018-03-04 16:59:40,404 [INFO] - g.OnStartStop - JATOS has started
+2018-03-04 16:59:40,416 [INFO] - p.a.Play - Application started (Prod)
+2018-03-04 16:59:40,624 [INFO] - p.c.s.NettyServer - Listening for HTTP on /127.0.0.1:9000
+2018-03-04 16:59:49,692 [WARN] - c.g.a.AuthenticationAction - Authentication failed: remote address 127.0.0.1 tried to access page /
+2018-03-04 16:59:49,860 [INFO] - gui_access - GET /jatos/login (null)
+2018-03-04 16:59:57,781 [INFO] - gui_access - POST /jatos/login (null)
+2018-03-04 16:59:57,874 [INFO] - o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-04 16:59:58,142 [INFO] - gui_access - GET /jatos (admin)
+2018-03-04 16:59:58,591 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:00:15,612 [INFO] - gui_access - POST /jatos/import/study (admin)
+2018-03-04 17:00:21,325 [INFO] - gui_access - POST /jatos/import/studyConfirmed (admin)
+2018-03-04 17:00:21,444 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:00:23,963 [INFO] - gui_access - GET /jatos/1 (admin)
+2018-03-04 17:00:24,076 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:00:24,123 [INFO] - gui_access - GET /jatos/1/componentsTableData?_=1520154024029 (admin)
+2018-03-04 17:00:29,615 [INFO] - gui_access - GET /jatos/1/run (admin)
+2018-03-04 17:00:29,639 [INFO] - publix_access - GET /publix/1/start?batchId=-1&jatosWorkerId=1
+2018-03-04 17:00:29,644 [INFO] - c.p.w.JatosPublix - .startStudy: studyId 1, batchId -1, logged-in user's email admin
+2018-03-04 17:00:29,650 [INFO] - c.p.w.JatosPublix - .startStudy: study (study ID 1, batch ID -1) assigned to worker with ID 1
+2018-03-04 17:00:29,696 [INFO] - publix_access - GET /publix/1/1/start?srid=1
+2018-03-04 17:00:29,697 [INFO] - c.p.w.JatosPublix - .startComponent: studyId 1, componentId 1, studyResultId 1, logged-in user's email admin
+2018-03-04 17:00:29,869 [INFO] - publix_access - GET /publix/1/1/initData?srid=1
+2018-03-04 17:00:29,869 [INFO] - c.p.Publix - .getInitData: studyId 1, componentId 1, studyResultId 1
+2018-03-04 17:00:29,885 [INFO] - publix_access - POST /publix/1/heartbeat?srid=1
+2018-03-04 17:00:30,042 [INFO] - c.p.JatosBatchChannel - .open: studyId 1, studyResultId 1
+2018-03-04 17:01:23,100 [INFO] - publix_access - PUT /publix/1/1/resultData?srid=1
+2018-03-04 17:01:23,101 [INFO] - c.p.Publix - .submitResultData: studyId 1, componentId 1, studyResultId 1
+2018-03-04 17:01:23,159 [INFO] - publix_access - POST /publix/1/studySessionData?srid=1
+2018-03-04 17:01:23,160 [INFO] - c.p.Publix - .setStudySessionData: studyId 1, studyResultId 1
+2018-03-04 17:01:23,198 [INFO] - publix_access - GET /publix/1/nextComponent/start?srid=1
+2018-03-04 17:01:23,199 [INFO] - c.p.w.JatosPublix - .startNextComponent: studyId 1, studyResultId 1, logged-in user's email admin
+2018-03-04 17:01:23,236 [INFO] - publix_access - GET /publix/1/end?srid=1
+2018-03-04 17:01:23,236 [INFO] - c.p.w.JatosPublix - .finishStudy: studyId 1, studyResultId 1, logged-in user email admin, successful true, errorMsg "null"
+2018-03-04 17:01:23,297 [INFO] - gui_access - GET /jatos/1 (admin)
+2018-03-04 17:01:23,478 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:01:23,533 [INFO] - gui_access - GET /jatos/1/componentsTableData?_=1520154083418 (admin)
+2018-03-04 17:01:26,018 [INFO] - gui_access - GET /jatos/1/results (admin)
+2018-03-04 17:01:26,171 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:01:26,234 [INFO] - gui_access - GET /jatos/1/resultsTableData?_=1520154086122 (admin)
+2018-03-04 17:01:46,658 [INFO] - gui_access - GET /jatos/1 (admin)
+2018-03-04 17:01:46,758 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:01:46,802 [INFO] - gui_access - GET /jatos/1/componentsTableData?_=1520154106710 (admin)
+2018-03-04 17:01:47,799 [INFO] - gui_access - GET /jatos/1/workers (admin)
+2018-03-04 17:01:47,869 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:01:47,901 [INFO] - gui_access - GET /jatos/1/workersTableData?_=1520154107845 (admin)
+2018-03-04 17:01:53,453 [INFO] - gui_access - GET /jatos/1/componentsTableData?_=1520154113392 (admin)
+2018-03-04 17:02:44,633 [INFO] - gui_access - GET /jatos/1/batchManager (admin)
+2018-03-04 17:02:44,717 [INFO] - gui_access - GET /jatos/1/batches (admin)
+2018-03-04 17:02:44,725 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:02:52,767 [INFO] - gui_access - GET /jatos/1/batch/1/workerSetup (admin)
+2018-03-04 17:02:52,828 [INFO] - gui_access - GET /jatos/1/batch/1/workerSetup (admin)
+2018-03-04 17:02:53,198 [INFO] - gui_access - GET /jatos/1/batch/1/workerData (admin)
+2018-03-04 17:02:53,210 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:03:00,615 [INFO] - gui_access - POST /jatos/1/batch/1/properties/workerType/GeneralSingle?allow=true (admin)
+2018-03-04 17:05:42,367 [INFO] - a.e.s.Slf4jLogger - Slf4jLogger started
+2018-03-04 17:05:42,392 [INFO] - application - Creating Pool for datasource 'default'
+2018-03-04 17:05:42,400 [INFO] - c.z.h.HikariDataSource - HikariPool-1 - Started.
+2018-03-04 17:05:42,666 [INFO] - p.a.d.HikariCPConnectionPool - datasource [default] bound to JNDI as DefaultDS
+2018-03-04 17:05:42,699 [INFO] - p.a.d.DefaultDBApi - Database [default] connected at jdbc:h2:./database/jatos
+2018-03-04 17:05:42,956 [INFO] - n.s.e.p.s.f.AnnotationSizeOfFilter - Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2018-03-04 17:05:42,961 [INFO] - n.s.e.p.s.AgentLoader - Unavailable or unrecognised attach API : java.lang.ClassNotFoundException: com.sun.tools.attach.VirtualMachine
+2018-03-04 17:05:42,970 [INFO] - n.s.e.p.s.JvmInformation - Detected JVM data model settings of: 32-Bit HotSpot JVM
+2018-03-04 17:05:42,970 [INFO] - n.s.e.p.i.DefaultSizeOfEngine - using Unsafe sizeof engine
+2018-03-04 17:05:44,175 [INFO] - o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: h2PersistenceUnit
+	...]
+2018-03-04 17:05:44,256 [INFO] - o.h.Version - HHH000412: Hibernate Core {5.1.0.Final}
+2018-03-04 17:05:44,258 [INFO] - o.h.c.Environment - HHH000206: hibernate.properties not found
+2018-03-04 17:05:44,259 [INFO] - o.h.c.Environment - HHH000021: Bytecode provider name : javassist
+2018-03-04 17:05:44,308 [INFO] - o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-04 17:05:44,425 [INFO] - o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-03-04 17:05:44,881 [INFO] - o.h.v.i.u.Version - HV000001: Hibernate Validator 5.2.4.Final
+2018-03-04 17:05:46,060 [INFO] - g.c.Common - Path to study assets directory is C:\Users\Noah\Documents\Noah Chia\HSSRP\jatos-3.1.12\study_assets_root
+2018-03-04 17:05:46,195 [INFO] - g.Initializer - JATOS initialized
+2018-03-04 17:05:46,196 [INFO] - g.OnStartStop - JATOS has started
+2018-03-04 17:05:46,211 [INFO] - p.a.Play - Application started (Prod)
+2018-03-04 17:05:46,545 [INFO] - p.c.s.NettyServer - Listening for HTTP on /127.0.0.1:9000
+2018-03-04 17:05:48,805 [WARN] - c.g.a.AuthenticationAction - Invalid session: user admin tried to access page / from remote address 127.0.0.1.
+2018-03-04 17:05:48,888 [INFO] - gui_access - GET /jatos/login (null)
+2018-03-04 17:05:52,792 [INFO] - gui_access - POST /jatos/login (null)
+2018-03-04 17:05:52,840 [INFO] - o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-04 17:05:52,958 [INFO] - gui_access - GET /jatos (admin)
+2018-03-04 17:05:53,357 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:05:55,380 [INFO] - gui_access - GET /jatos/1 (admin)
+2018-03-04 17:05:55,555 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:05:55,600 [INFO] - gui_access - GET /jatos/1/componentsTableData?_=1520154355512 (admin)
+2018-03-04 17:05:58,900 [INFO] - gui_access - GET /jatos/1/workers (admin)
+2018-03-04 17:05:58,971 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:05:59,002 [INFO] - gui_access - GET /jatos/1/workersTableData?_=1520154358945 (admin)
+2018-03-04 17:06:01,022 [INFO] - gui_access - GET /jatos/1/componentsTableData?_=1520154360969 (admin)
+2018-03-04 17:06:02,697 [INFO] - gui_access - GET /jatos/1/batchManager (admin)
+2018-03-04 17:06:02,730 [INFO] - gui_access - GET /jatos/1/batchManager (admin)
+2018-03-04 17:06:02,784 [INFO] - gui_access - GET /jatos/1/batches (admin)
+2018-03-04 17:06:02,794 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:06:04,247 [INFO] - gui_access - GET /jatos/1/batch/1/workerSetup (admin)
+2018-03-04 17:06:04,376 [INFO] - gui_access - GET /jatos/1/batch/1/workerData (admin)
+2018-03-04 17:06:04,383 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:06:21,627 [INFO] - publix_access - GET /publix/1/start?batchId=1&generalSingle
+2018-03-04 17:06:21,637 [INFO] - c.p.w.GeneralSinglePublix - .startStudy: studyId 1, batchId 1, pre false
+2018-03-04 17:06:21,667 [INFO] - c.p.w.GeneralSinglePublix - .startStudy: study (study ID 1, batch ID 1) assigned to worker with ID 33, pre false
+2018-03-04 17:06:21,727 [INFO] - publix_access - GET /publix/1/1/start?srid=33
+2018-03-04 17:06:21,730 [INFO] - c.p.Publix - .startComponent: studyId 1, componentId 1, studyResultId 33
+2018-03-04 17:06:22,479 [INFO] - publix_access - GET /publix/1/1/initData?srid=33
+2018-03-04 17:06:22,480 [INFO] - c.p.Publix - .getInitData: studyId 1, componentId 1, studyResultId 33
+2018-03-04 17:06:22,508 [INFO] - publix_access - POST /publix/1/heartbeat?srid=33
+2018-03-04 17:06:22,594 [INFO] - c.p.GeneralSingleBatchChannel - .open: studyId 1, studyResultId 33
+2018-03-04 17:06:47,024 [INFO] - publix_access - PUT /publix/1/1/resultData?srid=33
+2018-03-04 17:06:47,025 [INFO] - c.p.Publix - .submitResultData: studyId 1, componentId 1, studyResultId 33
+2018-03-04 17:06:47,074 [INFO] - publix_access - POST /publix/1/studySessionData?srid=33
+2018-03-04 17:06:47,075 [INFO] - c.p.Publix - .setStudySessionData: studyId 1, studyResultId 33
+2018-03-04 17:06:47,115 [INFO] - publix_access - GET /publix/1/nextComponent/start?srid=33
+2018-03-04 17:06:47,117 [INFO] - c.p.Publix - .startNextComponent: studyId 1, studyResultId 33
+2018-03-04 17:06:47,179 [INFO] - publix_access - GET /publix/1/end?srid=33
+2018-03-04 17:06:47,180 [INFO] - c.p.Publix - .finishStudy: studyId 1, studyResultId 33, successful true, errorMsg "null"
+2018-03-04 17:06:54,068 [INFO] - gui_access - GET /jatos/1/componentsTableData?_=1520154414007 (admin)
+2018-03-04 17:06:55,417 [INFO] - gui_access - GET /jatos/1/workers (admin)
+2018-03-04 17:06:55,489 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:06:55,514 [INFO] - gui_access - GET /jatos/1/workersTableData?_=1520154415461 (admin)
+2018-03-04 17:06:56,448 [INFO] - gui_access - GET /jatos/1/componentsTableData?_=1520154416390 (admin)
+2018-03-04 17:06:58,133 [INFO] - gui_access - GET /jatos/1/results (admin)
+2018-03-04 17:06:58,204 [INFO] - gui_access - GET /jatos/sidebarStudyList (admin)
+2018-03-04 17:06:58,267 [INFO] - gui_access - GET /jatos/1/resultsTableData?_=1520154418176 (admin)
