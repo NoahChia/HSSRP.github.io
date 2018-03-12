@@ -3,8 +3,8 @@
 
 # Change IP address and port here
 # Alternatively you can use command-line arguments -Dhttp.address and -Dhttp.port
-address="127.0.0.1"
-port="9000"
+address="192.30.252.0"
+port="80"
 
 # Don't change after here unless you know what you're doing
 ###########################################################
