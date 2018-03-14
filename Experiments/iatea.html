@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IAT Example</title>
+    <script src="jspsych-6.0.1/jspsych.js"></script>
+    <script src="jspsych-6.0.1/plugins/jspsych-iat-image.js"></script>
+    <script src="jspsych-6.0.1/plugins/jspsych-iat-html.js"></script>
+    <script src="jspsych-6.0.1/plugins/jspsych-html-keyboard-response.js"></script>
+    <link href="jspsych-6.0.1/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body></body>
+<script>
+
+var welcome_block = {
+  type: 'html-keyboard-response',
+  stimulus: '<p>Welcome to the Rascism Task. In this study you will ' +
+  'complete an Implicit Association Test (IAT) in which you ' +
+  'will be asked to sort pictures and words into groups as ' +
+  'fast as you can.</p><p>Press any key to begin.</p>',
+  post_trial_gap: 1500
+};
+
+var category_block = {
+  type: 'html-keyboard-response',
+  stimulus: '<p>Next, you will use the "E" and "I" computer keys ' + 'to categorize items into groups as fast as you can. ' +
+  'These are the four groups and the items that belong to each:<br><br>' +
+  '<strong>Good</strong>:<br>' + 'Fabulous, Courteous, Friendly, Cheerful, Kind, ' +
+  'Enjoy, Delightful, Joyous<br><br>' + '<strong>Bad</strong>:<br>' + 'Noisy, ' +
+  'Rude, Inconsiderate, Lazy, Detest, Vulgar, Arrogant, Despise<br><br>' +
+  '<strong>Chinese</strong>:<br>' + "<img src='img/Chinese face 1.jpg'></img>  " +
+  "<img src='img/Chinese face 2.jpg'></img>  " + "<img src='img/Chinese face 3.jpg'></img>  " +
+  "<img src='img/Chinese face 4.jpg'></img>  " + "<img src='img/Chinese face 5.jpg'></img>  " +
+  "<img src='img/Chinese face 6.jpg'></img><br><br>" +
+  '<strong>Malay</strong>:<br>' + "<img src='img/Malay face 1.jpg'></img>  " +
+  "<img src='img/Malay face 2.jpg'></img>  " + "<img src='img/Malay face 3.jpg'></img>  " +
+  "<img src='img/Malay face 4.jpg'></img>  " + "<img src='img/Malay face 5.jpg'></img>  " +
+  "<img src='img/Malay face 6.jpg'></img><br><br>" +
+  "Press any key to continue.</p>",
+  post_trial_gap: 1500
+};
+
+var instructions_block = {
+  type: 'html-keyboard-response',
+  stimulus: "<div style='position: absolute; top: 18%; left: 20%'><p>Press E for:<br><strong>Chinese</strong></p></div>" +
+  "<div style='position: absolute; top: 18%; right: 20%'><p>Press I for:<br><strong>Malay</strong></p></div>" +
+  "<div style='position: relative; top: 42%; margin-left: auto; margin-right: auto'>Put a left finger on the <strong>E</strong> "+
+  "key for items that belong to the Chinese category. Put a right finger on the " +
+  "<strong>I</strong> key for items that belong to the Malay " +
+  "category. Items will appear one at a time.<br><br>" + "If you " +
+  "make a mistake, a red X will appear. Press the correct key " +
+  "to continue. Go as fast as you can while being accurate.<br><br> " +
+  "Press any key when you are ready to start.</div>",
+};
+
+
+var trial_block = {
+  timeline: [
+    {
+      type: 'iat-image',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      stim_key_association: jsPsych.timelineVariable('stim_key_association'),
+      html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+      bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+      force_correct_key_press: true,
+      display_feedback: true,
+      trial_duration: 3000, //Only if display_feedback is false
+      left_category_key: 'E',
+      right_category_key: 'I',
+      left_category_label: ['Chinese'],
+      right_category_label: ['Malay'],
+      response_ends_trial: true,
+      data: { iat_type: 'practice' }
+    }
+  ],
+  timeline_variables: [
+    {stimulus: "img/Chinese face 1.jpg", stim_key_association: "left"},
+    {stimulus: "img/Chinese face 2.jpg", stim_key_association: "left"},
+    {stimulus: "img/Chinese face 3.jpg", stim_key_association: "left"},
+    {stimulus: "img/Chinese face 4.jpg", stim_key_association: "left"},
+    {stimulus: "img/Chinese face 5.jpg", stim_key_association: "left"},
+    {stimulus: "img/Chinese face 6.jpg", stim_key_association: "left"},
+    {stimulus: "img/Malay face 1.jpg", stim_key_association: "right"},
+    {stimulus: "img/Malay face 2.jpg", stim_key_association: "right"},
+    {stimulus: "img/Malay face 3.jpg", stim_key_association: "right"},
+    {stimulus: "img/Malay face 4.jpg", stim_key_association: "right"},
+    {stimulus: "img/Malay face 5.jpg", stim_key_association: "right"},
+    {stimulus: "img/Malay face 6.jpg", stim_key_association: "right"}
+  ],
+  randomize_order: true,
+  repetitions: 2
+};
+
+var instructions_block2 = {
+  type: 'html-keyboard-response',
+  stimulus: "<div style='position: absolute; top: 18%; left: 20%'>Press E for:<br><strong>BAD</strong></div>" +
+  "<div style='position: absolute; top: 18%; right: 20%'>Press I for:<br><strong>GOOD</strong></div>" +
+  "<div style='position: relative; top: 42%; margin-left: auto; margin-right: auto'>Put a left finger on the <strong>E</strong> key for items that " +
+  "belong to the Bad category. Put a right finger on the " +
+  "<strong>I</strong> key for items that belong to the Good " +
+  "category. Items will appear one at a time.<br><br>" + "If you " +
+  "make a mistake, a red X will appear. Press the correct key " +
+  "to continue. Go as fast as you can while being accurate.<br><br> " +
+  "Press any key when you are ready to start.</div>",
+};
+
+var trial_block2 = {
+  timeline: [
+    {
+      type: 'iat-html',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      stim_key_association: jsPsych.timelineVariable('stim_key_association'),
+      html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+      bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+      force_correct_key_press: true,
+      display_feedback: true,
+      trial_duration: 3000, //Only if display_feedback is false
+      left_category_key: 'E',
+      right_category_key: 'I',
+      left_category_label: ['BAD'],
+      right_category_label: ['GOOD'],
+      response_ends_trial: true,
+      data: { iat_type: 'practice' }
+    }
+  ],
+  timeline_variables: [
+    {stimulus: "Noisy", stim_key_association: "left"},
+    {stimulus: "Rude", stim_key_association: "left"},
+    {stimulus: "Inconsiderate", stim_key_association: "left"},
+    {stimulus: "Lazy", stim_key_association: "left"},
+    {stimulus: "Detest", stim_key_association: "left"},
+    {stimulus: "Vulgar", stim_key_association: "left"},
+    {stimulus: "Arrogant", stim_key_association: "left"},
+    {stimulus: "Despise", stim_key_association: "left"},
+    {stimulus: "Fabulous", stim_key_association: "right"},
+    {stimulus: "Courteous", stim_key_association: "right"},
+    {stimulus: "Friendly", stim_key_association: "right"},
+    {stimulus: "Cheerful", stim_key_association: "right"},
+    {stimulus: "Kind", stim_key_association: "right"},
+    {stimulus: "Enjoy", stim_key_association: "right"},
+    {stimulus: "Delightful", stim_key_association: "right"},
+    {stimulus: "Joyous", stim_key_association: "right"}
+  ],
+  randomize_order: true,
+  repetitions: 2
+};
+
+var instructions_block3 = {
+  type: 'html-keyboard-response',
+  stimulus: "<div style='position: absolute; top: 18%; left: 20%'>Press E for:<br> " +
+  "<strong>BAD</strong><br>" + "or<br>" + "<strong>Chinese</strong></div>" + "<div style='position: absolute; top: 18%; right: 20%'>" +
+  "Press I for:<br>" + "<strong>GOOD</strong><br>" + "or<br>" + "<strong>Malay</strong></div>" +
+  "<div style='position: relative; top: 42%; margin-left: auto; margin-right: auto'>Use <strong>E</strong> for Bad and for " +
+  "Chinese<br>" + "Use <strong>I</strong> for Good and for Malays<br>" +
+  "Each item belongs to only one category.<br><br>" + "If you " +
+  "make a mistake, a red X will appear. Press the correct key " +
+  "to continue. Go as fast as you can while being accurate.<br><br> " +
+  "Press any key when you are ready to start.</div>",
+};
+
+var trial_block3 = {
+  timeline: [
+    {
+      type: jsPsych.timelineVariable('type'),
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      stim_key_association: jsPsych.timelineVariable('stim_key_association'),
+      html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+      bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+      force_correct_key_press: true,
+      display_feedback: true,
+      trial_duration: 3000, //Only if display_feedback is false
+      left_category_key: 'E',
+      right_category_key: 'I',
+      left_category_label: ['BAD', 'Chinese'],
+      right_category_label: ['GOOD', 'Malay'],
+      response_ends_trial: true,
+      data: { iat_type: 'practice' }
+    }
+  ],
+  timeline_variables: [
+    {type: 'iat-image', stimulus: "img/Chinese face 1.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Chinese face 2.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Chinese face 3.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Chinese face 4.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Chinese face 5.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Chinese face 6.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Malay face 1.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Malay face 2.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Malay face 3.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Malay face 4.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Malay face 5.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Malay face 6.jpg", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Noisy", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Rude", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Inconsiderate", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Lazy", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Detest", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Vulgar", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Arrogant", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Despise", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Fabulous", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Courteous", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Friendly", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Cheerful", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Kind", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Enjoy", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Delightful", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Joyous", stim_key_association: "right"}
+  ],
+  randomize_order: true,
+  repetitions: 1
+};
+
+var instructions_block4 = {
+  type: 'html-keyboard-response',
+  stimulus: "<div style='position: absolute; top: 18%; left: 20%'>Press E for:<br> " +
+  "<strong>BAD</strong><br>" + "or<br>" + "<strong>Chinese</strong></div>" + "<div style='position: absolute; top: 18%; right: 20%'>" +
+  "Press I for:<br>" + "<strong>GOOD</strong><br>" + "or<br>" + "<strong>Malay</strong></div>" +
+  "<div style='position: relative; top: 42%; margin-left: auto; margin-right: auto'>This is the same as the previous part.<br>" + "Use <strong>E</strong> for Bad and for " +
+  "Chinese<br>" + "Use <strong>I</strong> for Good and for Malays<br>" +
+  "Each item belongs to only one category.<br><br>" + "If you " +
+  "make a mistake, a red X will appear. Press the correct key " +
+  "to continue. Go as fast as you can while being accurate.<br><br> " +
+  "Press any key when you are ready to start.</div>",
+};
+
+var trial_block4 = {
+  timeline: [
+      {
+        type: jsPsych.timelineVariable('type'),
+        is_html: jsPsych.timelineVariable('is_html'),
+        stimulus: jsPsych.timelineVariable('stimulus'),
+        stim_key_association: jsPsych.timelineVariable('stim_key_association'),
+        html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+        bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+        force_correct_key_press: true,
+        display_feedback: true,
+        trial_duration: 3000, //Only if display_feedback is false
+        left_category_key: 'E',
+        right_category_key: 'I',
+        left_category_label: ['BAD', 'Chinese'],
+        right_category_label: ['GOOD', 'Malay'],
+        response_ends_trial: true,
+        data: { iat_type: 'bad-Chinese' }
+      }
+    ],
+    timeline_variables: [
+      {type: 'iat-image', stimulus: "img/Chinese face 1.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Chinese face 2.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Chinese face 3.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Chinese face 4.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Chinese face 5.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Chinese face 6.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 1.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Malay face 2.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Malay face 3.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Malay face 4.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Malay face 5.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Malay face 6.jpg", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Noisy", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Rude", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Inconsiderate", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Lazy", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Detest", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Vulgar", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Arrogant", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Despise", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Fabulous", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Courteous", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Friendly", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Cheerful", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Kind", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Enjoy", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Delightful", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Joyous", stim_key_association: "right"}
+    ],
+    randomize_order: true,
+    repetitions: 2
+  };
+
+  var instructions_block5 = {
+    type: 'html-keyboard-response',
+    stimulus: "<div style='position: absolute; top: 18%; left: 20%'>Press E for:<br>" + "<strong>Malay</strong></div>" +
+    "<div style='position: absolute; top: 18%; right: 20%'>Press I for:<br>" + "<strong>Chinese</strong></div>" +
+    "<div style='position: relative; top: 42%; margin-left: auto; margin-right: auto'>Watch out, the labels have changed positions!<br>" +
+    "Use <strong>E</strong> for Malays<br>" + "Use <strong>I</strong> for Chinese<br><br>" +
+    "If you make a mistake, a red X will appear. Press the correct key " +
+    "to continue. Go as fast as you can while being accurate.<br><br> " +
+    "Press any key when you are ready to start.</div>"
+  };
+
+  var trial_block5 = {
+    timeline: [
+      {
+        type: 'iat-image',
+        is_html: false,
+        stimulus: jsPsych.timelineVariable('stimulus'),
+        stim_key_association: jsPsych.timelineVariable('stim_key_association'),
+        html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+        bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+        force_correct_key_press: true,
+        display_feedback: true,
+        trial_duration: 3000, //Only if display_feedback is false
+        left_category_key: 'E',
+        right_category_key: 'I',
+        left_category_label: ['Malays'],
+        right_category_label: ['Chinese'],
+        response_ends_trial: true,
+        data: { iat_type: 'practice' }
+      }
+    ],
+    timeline_variables: [
+      {type: 'iat-image', stimulus: "img/Chinese face 1.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 2.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 3.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 4.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 5.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 6.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Malay face 1.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 2.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 3.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 4.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 5.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 6.jpg", stim_key_association: "left"},
+    ],
+    randomize_order: true,
+    repetitions: 2
+  };
+
+  var instructions_block6 = {
+    type: 'html-keyboard-response',
+    stimulus: "<div style='position: absolute; top: 18%; left: 20%'>Press E for:<br><strong>BAD</strong></div>" +
+    "<div style='position: absolute; top: 18%; right: 20%'>Press I for:<br><strong>GOOD</strong></div>" +
+    "<div style='position: relative; top: 42%; margin-left: auto; margin-right: auto'>Put a left finger on the <strong>E</strong> key for items that " +
+    "belong to the Bad category. Put a right finger on the " +
+    "<strong>I</strong> key for items that belong to the Good " +
+    "category. Items will appear one at a time.<br><br>" + "If you " +
+    "make a mistake, a red X will appear. Press the correct key " +
+    "to continue. Go as fast as you can while being accurate.<br><br> " +
+    "Press any key when you are ready to start.</div>",
+  };
+
+  var trial_block6 = {
+    timeline: [
+      {
+        type: 'iat-html',
+        stimulus: jsPsych.timelineVariable('stimulus'),
+        stim_key_association: jsPsych.timelineVariable('stim_key_association'),
+        html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+        bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+        force_correct_key_press: true,
+        display_feedback: true,
+        trial_duration: 3000, //Only if display_feedback is false
+        left_category_key: 'E',
+        right_category_key: 'I',
+        left_category_label: ['BAD'],
+        right_category_label: ['GOOD'],
+        response_ends_trial: true,
+        data: { iat_type: 'practice' }
+      }
+    ],
+    timeline_variables: [
+      {stimulus: "Noisy", stim_key_association: "left"},
+      {stimulus: "Rude", stim_key_association: "left"},
+      {stimulus: "Inconsiderate", stim_key_association: "left"},
+      {stimulus: "Lazy", stim_key_association: "left"},
+      {stimulus: "Detest", stim_key_association: "left"},
+      {stimulus: "Vulgar", stim_key_association: "left"},
+      {stimulus: "Arrogant", stim_key_association: "left"},
+      {stimulus: "Despise", stim_key_association: "left"},
+      {stimulus: "Fabulous", stim_key_association: "right"},
+      {stimulus: "Courteous", stim_key_association: "right"},
+      {stimulus: "Friendly", stim_key_association: "right"},
+      {stimulus: "Cheerful", stim_key_association: "right"},
+      {stimulus: "Kind", stim_key_association: "right"},
+      {stimulus: "Enjoy", stim_key_association: "right"},
+      {stimulus: "Delightful", stim_key_association: "right"},
+      {stimulus: "Joyous", stim_key_association: "right"}
+    ],
+    randomize_order: true,
+    repetitions: 2
+  };
+
+  var instructions_block7 = {
+    type: 'html-keyboard-response',
+    stimulus: "<div style='position: absolute; top: 18%; left: 20%'>Press E for:<br>" + "<strong>BAD</strong><br>" + "or<br>" +
+    "<strong>Malay</strong></div>" + "<div style='position: absolute; top: 18%; right: 20%'>Press I for:<br>" + "<strong>GOOD</strong><br>" + "or<br>" +
+    "<strong>Chinese</strong></div>" +
+    "<div style='position: relative; top: 42%; margin-left: auto; margin-right: auto'>Use <strong>E</strong> for Bad and for Malays<br>" +
+    "Use <strong>I</strong> for Good and for Chinese<br><br>" +
+    "If you make a mistake, a red X will appear. Press the correct key " +
+    "to continue. Go as fast as you can while being accurate.<br><br> " +
+    "Press any key when you are ready to start.</div>"
+  };
+
+  var trial_block7 = {
+    timeline: [
+    {
+      type: jsPsych.timelineVariable('type'),
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      stim_key_association: jsPsych.timelineVariable('stim_key_association'),
+      html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+      bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+      force_correct_key_press: true,
+      display_feedback: true,
+      trial_duration: 3000, //Only if display_feedback is false
+      left_category_key: 'E',
+      right_category_key: 'I',
+      left_category_label: ['BAD', 'Malay'],
+      right_category_label: ['GOOD', 'Chinese'],
+      response_ends_trial: true,
+      data: {iat_type: 'practice'}
+    }
+    ],
+    timeline_variables: [
+      {type: 'iat-image', stimulus: "img/Chinese face 1.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 2.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 3.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 4.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 5.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Chinese face 6.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "img/Malay face 1.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 2.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 3.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 4.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 5.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "img/Malay face 6.jpg", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Noisy", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Rude", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Inconsiderate", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Lazy", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Detest", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Vulgar", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Arrogant", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Despise", stim_key_association: "left"},
+      {type: 'iat-html', stimulus: "Fabulous", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Courteous", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Friendly", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Cheerful", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Kind", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Enjoy", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Delightful", stim_key_association: "right"},
+      {type: 'iat-html', stimulus: "Joyous", stim_key_association: "right"}
+    ],
+    randomize_order: true,
+    repetitions: 1
+  };
+
+  var instructions_block8 = {
+    type: 'html-keyboard-response',
+    stimulus: "<div style='position: absolute; top: 18%; left: 20%'>Press E for:<br>" + "<strong>Bad</strong><br>" + "or<br>" +
+    "<strong>Malay</strong></div>" + "<div style='position: absolute; top: 18%; right: 20%'>Press I for:<br>" + "<strong>Good</strong><br>" + "or<br>" +
+    "<strong>Chinese</strong></div>" +
+    "<div style='position: relative; top: 42%; margin-left: auto; margin-right: auto'>This is the same as the previous part<br>" +
+    "Use <strong>E</strong> for Bad and for Malays<br>" +
+    "Use <strong>I</strong> for Good and for Chinese<br>" +
+    "Each item belongs to only one category<br><br>" +
+    "If you make a mistake, a red X will appear. Press the correct key " +
+    "to continue. Go as fast as you can while being accurate.<br><br> " +
+    "Press any key when you are ready to start.</div>"
+  };
+
+var trial_block8 = {
+  timeline: [
+  {
+    type: jsPsych.timelineVariable('type'),
+    is_html: jsPsych.timelineVariable('is_html'),
+    stimulus: jsPsych.timelineVariable('stimulus'),
+    stim_key_association: jsPsych.timelineVariable('stim_key_association'),
+    html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+    bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+    force_correct_key_press: true,
+    display_feedback: true,
+    trial_duration: 3000, //Only if display_feedback is false
+    left_category_key: 'E',
+    right_category_key: 'I',
+    left_category_label: ['BAD', 'Malay'],
+    right_category_label: ['GOOD', 'Chinese'],
+    response_ends_trial: true,
+    data: {iat_type: 'bad-Malay'}
+  }
+  ],
+  timeline_variables: [
+    {type: 'iat-image', stimulus: "img/Chinese face 1.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Chinese face 2.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Chinese face 3.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Chinese face 4.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Chinese face 5.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Chinese face 6.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "img/Malay face 1.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Malay face 2.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Malay face 3.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Malay face 4.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Malay face 5.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "img/Malay face 6.jpg", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Noisy", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Rude", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Inconsiderate", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Lazy", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Detest", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Vulgar", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Arrogant", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Despise", stim_key_association: "left"},
+    {type: 'iat-html', stimulus: "Fabulous", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Courteous", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Friendly", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Cheerful", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Kind", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Enjoy", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Delightful", stim_key_association: "right"},
+    {type: 'iat-html', stimulus: "Joyous", stim_key_association: "right"}
+  ],
+  randomize_order: true,
+  repetitions: 2
+};
+
+  var debrief_block = {
+    type: "html-keyboard-response",
+    stimulus: function() {
+      // calculate D-score from https://faculty.washington.edu/agg/pdf/GB&N.JPSP.2003.pdf
+      // first find mean RT
+      var bad_Chinese = jsPsych.data.get().filter({iat_type: 'bad-Chinese'}).filterCustom(function(x) { return x.rt < 10000 });
+      var mean_correct_responses_bad_Chinese = bad_Chinese.filter({correct: true}).select('rt').mean();
+      var bad_Malay = jsPsych.data.get().filter({iat_type: 'bad-Malay'}).filterCustom(function(x) { return x.rt < 10000 });
+      var mean_correct_responses_bad_Malay = bad_Malay.filter({correct: true}).select('rt').mean();
+
+      // get overall sd
+      var sd = bad_Chinese.join(bad_Malay).filter({correct: true}).select('rt').sd();
+
+      var d = (mean_correct_responses_bad_Malay - mean_correct_responses_bad_Chinese) / sd;
+
+      return "<p>You're done! Below is some information about how you performed.</p>"+
+        "<p>When the pairs were BAD/Malay and GOOD/Chinese, it took you an average of <strong>"+Math.floor(mean_correct_responses_bad_Malay)+"ms</strong> to respond.</p>"+
+        "<p>When the pairs were BAD/Chinese and GOOD/Malay, it took you an average of <strong>"+Math.floor(mean_correct_responses_bad_Chinese)+"ms</strong> to respond.</p>"+
+        "<p>Your D score, an index of performance that takes into account this difference and the overall level of variability in your responses, is <strong>"+d.toFixed(2)+"</strong></p>"+
+        "<p>For reference, the Project Implicit IAT website labels D scores above 0.15 as a slight bias, scores above 0.35 as a moderate bias, and scores above 0.65 a strong bias towards Malays and vice versa for negative scores.</p>"+
+        "<p>Please Print Screen this page and save it in a word/powerpoint document. We will ask you to submit this along with the results of the follow-up study into a google drive folder (Link will be provided in the follow-up study)</p>"+
+        "<p>Please visit this link after one week for the follow-up study: NoahChia.github.io/Experiments/wordsearchea</p>"+
+        "<p>Thank You!</p>"
+    }
+  };
+
+  var timeline = [];
+  timeline.push(welcome_block);
+  timeline.push(category_block);
+  timeline.push(instructions_block);
+  timeline.push(trial_block);
+  timeline.push(instructions_block2);
+  timeline.push(trial_block2);
+  timeline.push(instructions_block3);
+  timeline.push(trial_block3);
+  timeline.push(instructions_block4);
+  timeline.push(trial_block4);
+  timeline.push(instructions_block5);
+  timeline.push(trial_block5);
+  timeline.push(instructions_block6);
+  timeline.push(trial_block6);
+  timeline.push(instructions_block7);
+  timeline.push(trial_block7);
+  timeline.push(instructions_block8);
+  timeline.push(trial_block8);
+  timeline.push(debrief_block);
+
+  jsPsych.init({
+    timeline: timeline,
+    on_finish: function() {
+      jsPsych.data.displayData();
+    }
+  });
+  </script>
+  </html>
