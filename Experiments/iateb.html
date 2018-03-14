@@ -528,11 +528,9 @@ var trial_block8 = {
 
       var d = (mean_correct_responses_bad_Malay - mean_correct_responses_bad_Chinese) / sd;
 
-      return "<p>You're done! Below is some information about how you performed.</p>"+
-        "<p>When the pairs were BAD/Malay and GOOD/Chinese, it took you an average of <strong>"+Math.floor(mean_correct_responses_bad_Malay)+"ms</strong> to respond.</p>"+
-        "<p>When the pairs were BAD/Chinese and GOOD/Malay, it took you an average of <strong>"+Math.floor(mean_correct_responses_bad_Chinese)+"ms</strong> to respond.</p>"+
+      return "<p>You're done!</p>"+
         "<p>Your D score, an index of performance that takes into account this difference and the overall level of variability in your responses, is <strong>"+d.toFixed(2)+"</strong></p>"+
-        "<p>For reference, the Project Implicit IAT website labels D scores above 0.15 as a slight bias, scores above 0.35 as a moderate bias, and scores above 0.65 a strong bias towards Malays and vice versa for negative scores.</p>"+
+        "<p>The meaning of this score will be revealed at the end of the follow-up study one week later</p>"+
         "<p>Please Print Screen this page and save it in a word/powerpoint document. We will ask you to submit this along with the results of the follow-up study into a google drive folder (Link will be provided in the follow-up study)</p>"+
         "<p>Please visit this link after one week for the follow-up study: NoahChia.github.io/Experiments/wordsearchea</p>"+
         "<p>Thank You!</p>"
