@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Search</title>
+  <link rel="stylesheet" type="text/css" href="wordfind-master/example/styles/style.css">
+</head>
+<body>
+
+<p>Word Search Task</p>
+<p>When you have completed the Word Search, please click on the Solve Puzzle button to move on.</p>
+<div id='puzzle'></div>
+<div id='words'></div>
+<div><form>
+<input style="position: absolute; transition: .5s ease; top: 67%; left: 42%;"
+type="button" value="Solve Puzzle" onclick="window.location.href='https://goo.gl/forms/n9ayHWjGAFbWfeje2'" />
+</form></div>
+
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="wordfind-master/src/wordfind.js"></script>
+<script type="text/javascript" src="wordfind-master/example/scripts/wordfindgame.js"></script>
+<script>
+
+  var words = ['care', 'spoon', 'empathy', 'mountain', 'acceptance', 'rainbow',
+               'help', 'bank', 'kindness', 'equality', 'appreciation', 'warmth',
+               'affection', 'compassion', 'sympathy', 'friendship', 'infection',
+               'palm', 'musical', 'frequency','tool','deposit'
+              ];
+
+  // start a word find game
+  var gamePuzzle = wordfindgame.create(words, '#puzzle', '#words');
+
+</script>
+</body>
+</html>
