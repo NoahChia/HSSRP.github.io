@@ -530,7 +530,6 @@ var trial_block8 = {
 
       return "<p>You're done! Below is some information about how you performed.</p>"+
         "<p>Your D score, an index of performance that takes into account this difference and the overall level of variability in your responses, is <strong>"+d.toFixed(2)+"</strong></p>"+
-        "<p>The meaning of this score will be revealed at the end of the follow-up study five days later</p>"+
         "<p>Thank You!</p>"
     }
   };
@@ -557,7 +556,9 @@ var trial_block8 = {
   timeline.push(debrief_block);
 
   jsPsych.init({
-    timeline: timeline;
+    timeline: timeline,
+    on_finish: function() {
+      jsPsych.data.displayData();
     }
   });
   </script>
