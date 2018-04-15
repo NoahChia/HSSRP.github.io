@@ -531,9 +531,7 @@ var trial_block8 = {
       return "<p>You're done!</p>"+
         "<p>Your D score, an index of performance that takes into account this difference and the overall level of variability in your responses, is <strong>"+d.toFixed(2)+"</strong></p>"+
         "<p>The meaning of this score will be revealed at the end of the follow-up study one week later</p>"+
-        "<p>Please Print Screen this page and save it in a word/powerpoint document. We will ask you to submit this along with the results of the follow-up study into a google drive folder (Link will be provided in the follow-up study)</p>"+
-        "<p>Please visit this link after one week for the follow-up study: NoahChia.github.io/Experiments/wordsearchca</p>"+
-        "<p>The links may be different for different participants so please do not use another participant's link</p>"+
+        "<p>You will be given a link to the next part of the study five days later. Please visit https://tinyurl.com/dscore1 to submit your D-score</p>"+
         "<p>Thank You!</p>"
     }
   };
@@ -560,9 +558,7 @@ var trial_block8 = {
   timeline.push(debrief_block);
 
   jsPsych.init({
-    timeline: timeline,
-    on_finish: function() {
-      jsPsych.data.displayData();
+    timeline: timeline;
     }
   });
   </script>
