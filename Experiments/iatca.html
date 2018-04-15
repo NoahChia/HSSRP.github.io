@@ -559,6 +559,8 @@ var trial_block8 = {
 
   jsPsych.init({
     timeline: timeline,
+    on_finish: function() {
+      jsPsych.data.displayData();
     }
   });
   </script>
